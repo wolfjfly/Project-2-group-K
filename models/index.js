@@ -1,6 +1,6 @@
 const User = require('./User');
-const Request = require('./Request.js');
-const Give = require('/.Give');
+const Request = require('./Request');
+const Give = require('./Give');
 
 User.hasMany(Request, {
   foreignKey: 'user_id',
