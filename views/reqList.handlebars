@@ -1,0 +1,25 @@
+    <h1 class="display-3 text-center">Fulfill Requests!</h1>
+    <main class="container mt-5">
+        <section class="row justify-content-around">
+            
+
+
+            {{#each requests as |request|}}
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                <div class="card">
+                    <h3 class="card-header">
+                        {{request.id}} 
+                    </h3>
+                    <div class="card-body">
+                        <p class="card-text ">
+                        {{request.description}}
+                        </p>
+                    </div>
+                    <p class="card-footer">Date needed by: {{request.date}}</p>
+                </div>
+            </div>
+            {{/each}}
+
+        </section>
+    </main>
+    <script src="/js/reqList.js"></script>
