@@ -1,9 +1,8 @@
 const sequelize = require('../config/connection');
-const { User, Give, Request } = require('../models');
+const { User, Request } = require('../models');
 
 const userData = require('./userData.json');
-const requesttData = require('./requestData.json');
-// const giveData = require('./giveData.json');
+const requestData = require('./requestData.json');
 
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
@@ -13,19 +12,12 @@ const seedDatabase = async () => {
         returning: true,
     });
 
-    for (const request of requesttData) {
+    for (const request of requestData) {
         await Request.create({
             ...request,
             user_id: users[Math.floor(Math.random() * users.length)].id,
         });
     }
-
-    // for (const give of giveData) {
-    //     await Give.create({
-    //         ...give,
-    //         user_id: users[Math.floor(Math.random() * users.length)].id,
-    //     });
-    // }
 
     process.exit(0);
 };
