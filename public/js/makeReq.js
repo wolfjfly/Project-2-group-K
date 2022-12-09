@@ -8,28 +8,27 @@ $(function() {
     event.preventDefault()
     const title = $("#title").val();
     const description = $("#description").val();
-    const date = $("#datepicker").val();
-    console.log(title, description, date)
+    const date_needed = $("#datepicker").val();
 
 
     //post 1 request endpoint needed here
     const response = await fetch(`/`, {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify({
         title,
         description,
-        date,
-
+        date_needed,
+        //user_id?
         }),
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       });
     
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace("/back to an empty request form");
       } else {
-        alert('Failed to add Request');
+        alert("Failed to add Request");
       }
     });
 
