@@ -15,7 +15,8 @@
                         {{request.description}}
                         </p>
                     </div>
-                    <p class="card-footer">Date needed by: {{request.date}}</p>
+                    <button class="btn btn-block btn-info fulfill-btn" data-fulfillId="{{request.id}}">Fulfill Request!</button>
+                    <p class="card-footer">Date needed by: {{request.date_needed}}</p>
                 </div>
             </div>
             {{/each}}
