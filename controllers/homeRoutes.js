@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
     const requests = requestData.map((request) => request.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render("homepage", {
+    res.render('reqList', {
       requests,
       logged_in: req.session.logged_in,
     });
@@ -40,7 +40,7 @@ router.get("/request/:id", async (req, res) => {
 
     const request = requestData.get({ plain: true });
 
-    res.render("request", {
+    res.render("oneReq", {
       ...request,
       logged_in: req.session.logged_in,
     });
