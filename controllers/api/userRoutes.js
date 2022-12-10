@@ -1,6 +1,22 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
+router.get('/login', async (req, res) => {
+  try {
+    res.render('signIn')
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+router.get('/signUp', async (req, res) => {
+  try {
+    res.render('signUp')
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);

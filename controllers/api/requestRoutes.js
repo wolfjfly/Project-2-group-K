@@ -2,7 +2,13 @@ const router = require('express').Router();
 const { Request } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
+router.get('/makeReq', async (req, res) => {
+  try {
+    res.render('makeReq')
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 router.post('/', withAuth, async (req, res) => {
   try {
