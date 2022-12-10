@@ -2,26 +2,38 @@
   {
     "title": "Tennis Shoes",
     "description": "Mens, Size 11",
-    "date_needed": "January 24, 2023"
+    "date_needed": "01/12/1983"
   },
   {
     "title": "Underwear",
     "description": "Boys sizes M and/or L",
-    "date_needed": "January 15, 2023"
+    "date_needed": "01/12/1983"
   },
   {
     "title": "Dental Hygeine",
     "description": "Toothpaste and toothbrushes",
-    "date_needed": ""
+<<<<<<< HEAD
+    "date_needed": "01/12/1983"
+=======
+    "date_needed": "March 2, 2023"
+>>>>>>> 894dca99383bec1e7aa00ae36ce036424a25cf82
   },
   {
     "title": "Socks",
     "description": "Girls large",
-    "date_needed": ""
+<<<<<<< HEAD
+    "date_needed": "01/12/1983"
+=======
+    "date_needed": "March 3, 2023"
+>>>>>>> 894dca99383bec1e7aa00ae36ce036424a25cf82
   },
   {
     "title": "Cookware",
     "description": "Pots and pans",
-    "date_needed": "March 1, 2023"
+<<<<<<< HEAD
+    "date_needed": "01/12/1983"
+=======
+    "date_needed": "March 4, 2023"
+>>>>>>> 894dca99383bec1e7aa00ae36ce036424a25cf82
   } 
 ]
