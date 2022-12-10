@@ -12,16 +12,28 @@
   {
     "title": "Dental Hygeine",
     "description": "Toothpaste and toothbrushes",
+<<<<<<< HEAD
     "date_needed": "01/12/1983"
+=======
+    "date_needed": "March 2, 2023"
+>>>>>>> 894dca99383bec1e7aa00ae36ce036424a25cf82
   },
   {
     "title": "Socks",
     "description": "Girls large",
+<<<<<<< HEAD
     "date_needed": "01/12/1983"
+=======
+    "date_needed": "March 3, 2023"
+>>>>>>> 894dca99383bec1e7aa00ae36ce036424a25cf82
   },
   {
     "title": "Cookware",
     "description": "Pots and pans",
+<<<<<<< HEAD
     "date_needed": "01/12/1983"
+=======
+    "date_needed": "March 4, 2023"
+>>>>>>> 894dca99383bec1e7aa00ae36ce036424a25cf82
   } 
 ]
