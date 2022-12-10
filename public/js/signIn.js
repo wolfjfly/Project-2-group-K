@@ -5,15 +5,17 @@ $("#button").click(async function(event){
 
     if (email && password) {
       // Send a POST request to the API endpoint
-      const response = await fetch('/login', {
+      const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
+        console.log('made it')
         // If successful, redirect the browser to the profile page
-        document.location.replace('/reqList page endpont');
+        // document.location.replace('/reqList page endpont');
+        res.redirect('/')
       } else {
         alert(response.statusText);
       }
