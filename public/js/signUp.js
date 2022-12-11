@@ -6,7 +6,7 @@ $("#button").click(async function(event){
 
     if (name && email && password) {
       // Send a POST request to the API endpoint
-      const response = await fetch('/signup endpoint', {
+      const response = await fetch('/api/users', {
         method: 'POST',
         body: JSON.stringify({ name, email, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -14,7 +14,7 @@ $("#button").click(async function(event){
   
       if (response.ok) {
         // If successful, redirect the browser to the profile page
-        document.location.replace('/reqList page endpont');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
