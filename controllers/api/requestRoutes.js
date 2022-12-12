@@ -2,15 +2,8 @@ const router = require('express').Router();
 const { Request } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/makeReq', async (req, res) => {
-  try {
-    res.render('makeReq')
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/makeReq', withAuth, async (req, res) => {
   try {
     const newRequest = await Request.create({
       ...req.body,
@@ -33,7 +26,6 @@ router.post('/', withAuth, async (req, res) => {
 //         id: req.params.id,
 //       },
 //     });
-
 //     res.status(200).json(tagData);
 //     if (!userData) {
 //       res.status(404).json({ message: 'No request with this id!' });

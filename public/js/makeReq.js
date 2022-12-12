@@ -12,7 +12,7 @@ $(function() {
 
 
     //post 1 request endpoint needed here
-    const response = await fetch(`/`, {
+    const response = await fetch(`/api/requests/makeReq`, {
         method: "POST",
         body: JSON.stringify({
         title,
@@ -26,7 +26,7 @@ $(function() {
       });
     
       if (response.ok) {
-        document.location.replace("/back to an empty request form");
+        document.location.replace("/");
       } else {
         alert("Failed to add Request");
       }
