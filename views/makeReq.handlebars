@@ -1,0 +1,35 @@
+<div class="min-vh-50 d-flex align-items-center">
+
+        <section class="w-100 row justify-content-center">
+            
+            <div class="col-10 col-md-6 col-lg-5">
+                
+                <h1 class="display-3 text-center ">Make a Request!</h1>
+                
+                <form class="bg-white my-4 p-4 rounded card">
+                    
+                    <div class="form-group">
+                        <label for="title">What are you in need of?</label>
+                        <input type="text" id="title" class="form-control" placeholder="Title" required />
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="description">Please give a brief description</label>
+                        <input type="text" id="description" class="form-control" placeholder="Description" required />
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="datepicker">When do you need it by?</label>
+                        <input type="text" id="datepicker" class="form-control" placeholder="Date Desired By" required />
+                        <!--date can not be null and is therefore required in this box-->
+                        <!--date will be a string-->
+                    </div>
+                    <br>
+                    <button class="btn btn-block btn-success" id="button">Complete Request!</button>
+
+                </form>
+            </div>
+        </section>
+        
+    </div>
+    <script src="/js/makeReq.js"></script>

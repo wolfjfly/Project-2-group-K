@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>It Takes a Village</title>
+</head>
+<body>
+    <header class="jumbotron jumbotron-fluid bg-info">
+        <div class="container">
+            <section class="row ml-3">
+                <h1>It Takes a Village</h1>
+            </section>
+        </div>
+    </header>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/">Fulfill Requests</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/requests/makeReq">Make a Request</a>
+        </li>
+    </ul>
+    
+    {{{body}}}
+
+    
+
+    </body>
+    <br>
+<footer class="bg-info">
+    <hr />
+    <div class="container">
+      <section class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-md-4">
+          <address>
+            <h3>Contributers</h3>
+            
+            <h5>
+              Benjamin Wolf
+            </h5>
+            <h5>
+              Janelle Cikanek
+            </h5>
+            <h5>
+              Jaqsen Meyer
+            </h5>
+            <h5>
+              Matthew Hanson
+            </h5>
+          </address>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+          <h3>Contact Us</h3>
+          <h5>Email: </h5>
+          <br>
+          <h5>
+            Ittakesavillage@gmail.com
+          </h5>
+          
+        </div>
+      </section>
+    </div>
+  </footer>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</html>

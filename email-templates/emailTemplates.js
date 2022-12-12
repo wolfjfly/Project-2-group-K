@@ -6,7 +6,7 @@ const emailTemplates = {
     newRegistration: function(toEmail, username) {
         return {
             from: process.env.FROM_EMAIL,
-            to: process.env.TO_EMAIL,
+            to: 'jtmeyer2014@gmail.com',
             subject: `Welcome ${username}, to the Village!!`,
             text: 'Thank you for Registering!',
             html: `<h1>Thanks for registering an account with <strong>It Takes a Village!</strong></h1>

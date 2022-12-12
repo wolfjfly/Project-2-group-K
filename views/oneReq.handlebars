@@ -1,0 +1,21 @@
+<h1 class="display-3 text-center">Fulfill Requests!</h1>
+    <main class="container mt-5">
+        <section class="row justify-content-around">
+            <div class="col-12 col-sm-6 col-lg-4 mb-3">
+                <div class="card">
+                <h3 class="card-header">
+                        {{title}} 
+                </h3>
+                <div class="card-body">
+                    <p class="card-text ">
+                        {{description}}
+                    </p>
+                </div>
+                
+                <p class="card-footer">Date needed by: {{date_needed}}</p>
+                <button class="btn btn-block btn-info fulfill-btn" id="claim-request" data-fulfillId="{{request.id}}">Fulfill Request!</button>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="/js/reqList.js"></script>

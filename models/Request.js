@@ -27,7 +27,14 @@ Request.init(
       type: DataTypes.DATE,
       allowNull: true,
     },
-    user_id: {
+    receiver_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    }, 
+    giver_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
