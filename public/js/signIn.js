@@ -12,10 +12,8 @@ $("#button").click(async function(event){
       });
   
       if (response.ok) {
-        console.log('made it')
         // If successful, redirect the browser to the profile page
-        // document.location.replace('/reqList page endpont');
-        res.redirect('/')
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
