@@ -1,10 +1,9 @@
-const session = require("express-session");
 
-$(".claim-request").click(async function(event){
+
+$("#claim-request").click(async function(event){
    event.preventDefault()
 
-   const reqId= $("#claim-request").val();
-   const giver_id= session.user_id
+   const reqId= $(this).attr("data-fulfillId");
    // const full_filled= true 
    // post 1 request endpoint needed here
    const response = await fetch(`/api/requests/${reqId}`, {
@@ -16,7 +15,7 @@ $(".claim-request").click(async function(event){
    });
    
    if (response.ok) {
-      document.location.replace("/back to an empty request form");
+      // document.location.replace("/");
    } else {
       alert("Failed to claim Request");
    }

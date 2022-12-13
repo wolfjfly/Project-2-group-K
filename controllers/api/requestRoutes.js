@@ -18,21 +18,23 @@ router.post('/makeReq', withAuth, async (req, res) => {
 });
 
 // update request as claimed
-router.put('/api/requests/:requestId', async (req, res) => {
+router.put('/:requestId', async (req, res) => {
   try {
     const requestData = await Request.update({
       giver_id: req.session.user_id,
       full_filled: true
     }, {
       where: {
-        id: req.params.id,
+        id: req.params.requestId,
       },
     });
-    res.status(200).json(tagData);
-    if (!userData) {
+    
+console.log("claim the Request",requestData)
+    if (!requestData) {
       res.status(404).json({ message: 'No request with this id!' });
       return;
     }
+    res.status(200).json(requestData);
   } catch (err) {
     res.status(500).json(err);
   }
