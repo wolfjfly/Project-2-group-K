@@ -1,3 +1,5 @@
+
+
 //Date picker function
 $(function() {
     $("#datepicker").datepicker();
@@ -18,7 +20,6 @@ $(function() {
         title,
         description,
         date_needed,
-        //user_id?
         }),
         headers: {
           "Content-Type": "application/json",
