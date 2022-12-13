@@ -6,6 +6,9 @@ router.get("/", withAuth, async (req, res) => {
   try {
     // Get all requests and JOIN with user data
     const requestData = await Request.findAll({
+      where: {
+        full_filled: null
+      },
       include: [
         {
           model: User,
