@@ -1,13 +1,14 @@
 const router = require('express').Router();
 const { Request } = require('../../models');
 const withAuth = require('../../utils/auth');
+const session = require("express-session");
 
 
 router.post('/makeReq', withAuth, async (req, res) => {
   try {
     const newRequest = await Request.create({
       ...req.body,
-      user_id: req.session.user_id,
+      receiver_id: req.session.user_id,
     });
 
     res.status(200).json(newRequest);
@@ -17,24 +18,25 @@ router.post('/makeReq', withAuth, async (req, res) => {
 });
 
 // update request as claimed
-// router.put('/api/requests/:requestId/giver/:userId', async (req, res) => {
-//   try {
-//     const requestData = await Request.update({
-//       request_title: req.body.request_title
-//     }, {
-//       where: {
-//         id: req.params.id,
-//       },
-//     });
-//     res.status(200).json(tagData);
-//     if (!userData) {
-//       res.status(404).json({ message: 'No request with this id!' });
-//       return;
-//     }
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+router.put('/api/requests/:requestId', async (req, res) => {
+  try {
+    const requestData = await Request.update({
+      giver_id: req.session.user_id,
+      full_filled: true
+    }, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json(tagData);
+    if (!userData) {
+      res.status(404).json({ message: 'No request with this id!' });
+      return;
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
