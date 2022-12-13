@@ -1,91 +1,100 @@
-const router = require('express').Router();
-const { Request, User } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { Request, User } = require("../models");
+const withAuth = require("../utils/auth");
+const sendEmail = require('../utils/newRegSendGrid');
 
 router.get("/", withAuth, async (req, res) => {
-    try {
-        const requestData = await Request.findAll({
-            include: [
-                {
-                    model: User,
-                    attributes: ["name"],
-                },
-            ],
-        });
+  try {
+    // Get all requests and JOIN with user data
+    const requestData = await Request.findAll({
+      where: {
+        full_filled: null
+      },
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
 
-        const requests = requestData.map((request) => request.get({ plain:true }));
+    // Serialize data so the template can read it
+    const requests = requestData.map((request) => request.get({ plain: true }));
 
-        res.render ('reqList', {
-            requests,
-            logged_in: req.session.logged_in,
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    // Pass serialized data and session flag into template
+    res.render('reqList', {
+      requests,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.get("/request/:id", async (req,res) => {
-    try {
-        const requestData = await Request.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ["name"],
-                },
-            ],
-        });
+router.get("/request/:id", async (req, res) => {
+  try {
+    const requestData = await Request.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
 
-        const request = requestData.get({ plain:true });
+    const request = requestData.get({ plain: true });
 
-        res.render("oneReq", {
-            ...request,
-            logged_in: req.session.logged_in,
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    res.render("oneReq", {
+      ...request,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.get("/profile", withAuth, async (req,res) => {
-    try {
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ["password"] },
-            include: [{ model: Request }],
-        });
+// Use withAuth middleware to prevent access to route
+router.get("/profile", withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Request }],
+    });
 
-        const user = userData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
-        res.render("profile", {
-            ...user,
-            logged_in: true,
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    res.render("profile", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.get("/requests/makeReq", async (req,res) => {
-    try {
-        res.render("makeReq")
-    } catch(err) {
-        res.status(500).json(err)
-    }
+router.get("/requests/makeReq", async (req, res) => {
+  try {
+    res.render("makeReq")
+  } catch(err) {
+    res.status(500).json(err)
+  }
+})
+
+router.get('/signUp', async (req, res) => {
+  try {
+    res.render('signUp')
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.get('/signUp', async (req,res) => {
-    try {
-        res.render('signUp')
-    } catch (err) {
-        res.status(500).json(err)
-    }
-});
-
-router.get('/login', async (req,res) => {
-    try {
-        res.render('signIn')
-    } catch (err) {
-        res.render(500).json(err);
-    }
+router.get('/login', async (req, res) => {
+  try {
+    res.render('signIn')
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

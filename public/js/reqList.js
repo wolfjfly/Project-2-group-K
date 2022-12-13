@@ -1,0 +1,20 @@
+$("#claim-request").click(async function(event){
+    event.preventDefault()
+
+    const reqId = $(this).attr("data-fulfilled");
+
+   const response = await fetch(`/api/requests/${reqId}`, {
+       method: "PUT",
+       
+
+       headers: {
+         "Content-Type": "application/json",
+       },
+     });
+   
+     if (response.ok) {
+       document.location.replace("/");
+     } else {
+       alert("Failed to claim Request");
+     }
+});

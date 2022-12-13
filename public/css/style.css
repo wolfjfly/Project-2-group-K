@@ -1,0 +1,15 @@
+.card {
+    min-height: 240px;
+}
+
+.nav-link {
+    color: black;
+}
+
+body {
+    background-color: rgb(176, 224, 175);
+}
+
+.btn-color {
+    color: black;
+}

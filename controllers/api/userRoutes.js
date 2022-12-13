@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const sendEmail = require('../../utils/newRegSendGrid');
 
 router.post('/', async (req,res) => {
     try {
