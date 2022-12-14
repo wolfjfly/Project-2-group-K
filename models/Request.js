@@ -24,7 +24,7 @@ Request.init(
       defaultValue: DataTypes.NOW,
     },
     date_needed: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     full_filled: {
