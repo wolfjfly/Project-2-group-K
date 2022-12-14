@@ -34,9 +34,8 @@ This project utilizes SendGrid, Bcrypt, Dotenv, Express, Handlebars, Mysql2, Seq
 
     https://lit-castle-82146.herokuapp.com
 
-
 <p>
-    <img src="/Users/janellecikanek/Desktop/Project-2-group-K/assets/images/ScreenShotVillage.png" alt>
+    <img src="/assets/images/ScreenShotVillage.png" alt>
     <em>Screen Shot</em>
 </p>
 
