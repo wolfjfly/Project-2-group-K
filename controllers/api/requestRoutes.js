@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Request } = require('../../models');
 const withAuth = require('../../utils/auth');
 const session = require("express-session");
+const foundEmail = require('../../utils/foundDonationSendGrid');
 
 
 router.post('/makeReq', withAuth, async (req, res) => {
@@ -22,7 +23,10 @@ router.put('/:requestId', withAuth, async (req, res) => {
   try {
     const requestData = await Request.update({
       giver_id: req.session.user_id,
-      fulilled: true
+redirect-put
+
+      fulfilled: true
+ main
     }, {
       where: {
         id: req.params.requestId,

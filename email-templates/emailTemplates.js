@@ -24,8 +24,8 @@ const emailTemplates = {
         return {
             from: process.env.FROM_EMAIL,
             to:process.env.TO_EMAIL,
-            subject: `Good News, ${username} - someone in the village has ${user.item} for you!`,
-            text: `Directions to claim ${user.item}`,
+            subject: `Good News, ${username} - someone in the village has ${Request.title} for you!`,
+            text: `Directions to claim ${Request.title}`,
             html: `<h1>Please be patient!</h1>
             <br>
             <p>Give us 24 hours from the time of this notification to process your request. After that you can stop at the Community Center on 123 Drury Lane NW, Cape Coral, FL 33914 to pick up ${user.item}</p>
@@ -34,15 +34,16 @@ const emailTemplates = {
         }
     },
 
-    itemClaimed: function(toEmail, username) {
-        return {
-            from: process.env.FROM_EMAIL,
-            to: process.env.TO_EMAIL,
-            subject: `URGENT! Somebody is in need of an item you offered to the community. Please deliver ${user.item} to the community station.`,
-            text: 'Your item has been claimed by a community member in need!',
-            html: ``
-        }
-    }    
+    // future development
+    // itemClaimed: function(toEmail, username) {
+    //     return {
+    //         from: process.env.FROM_EMAIL,
+    //         to: process.env.TO_EMAIL,
+    //         subject: `URGENT! ${username}, somebody is in need of an item you offered to the community. Please deliver ${Request.title} to the community station.`,
+    //         text: 'Your item has been claimed by a community member in need!',
+    //         html: ``
+    //     }
+    // }    
 
 };
 
