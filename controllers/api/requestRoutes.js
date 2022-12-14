@@ -22,7 +22,7 @@ router.put('/:requestId', withAuth, async (req, res) => {
   try {
     const requestData = await Request.update({
       giver_id: req.session.user_id,
-      full_filled: true
+      fulilled: true
     }, {
       where: {
         id: req.params.requestId,

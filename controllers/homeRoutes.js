@@ -30,6 +30,14 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+router.get("/thanks", withAuth, async (req, res) => {
+  try {
+    res.render("thanks")
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
 router.get("/request/:id", withAuth, async (req, res) => {
   try {
     const requestData = await Request.findByPk(req.params.id, {
