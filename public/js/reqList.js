@@ -15,7 +15,7 @@ $("#claim-request").click(async function(event){
    });
    
    if (response.ok) {
-      // document.location.replace("/");
+      document.location.replace("/thanks");
    } else {
       alert("Failed to claim Request");
    }
