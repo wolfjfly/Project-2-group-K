@@ -5,7 +5,7 @@ require('dotenv').config({
     path: require('find-config')('.env'),
 });
 
-const sendEmail = async (template, toEmail, username) => {
+const sendEmail = async (toEmail, username) => {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
     try {

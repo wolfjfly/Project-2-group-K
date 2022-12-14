@@ -13,7 +13,6 @@ const emailTemplates = {
             <br>
             <h2>You're already making a difference! See how you can contribute to those in your community or submit a request for a good or service!</h2>
             <br>
-            <h3>Please verify your account by following this link:</h3>
             <strong>Sincerely,</strong>
             <br>
             <strong>Your fellow villagers 👨‍👩‍👧‍👦🏕️</strong>`
@@ -23,7 +22,7 @@ const emailTemplates = {
     foundDonation: function(toEmail, username) {
         return {
             from: process.env.FROM_EMAIL,
-            to:process.env.TO_EMAIL,
+            to:toEmail,
             subject: `Good News, ${username} - someone in the village has ${Request.title} for you!`,
             text: `Directions to claim ${Request.title}`,
             html: `<h1>Please be patient!</h1>
@@ -38,7 +37,7 @@ const emailTemplates = {
     // itemClaimed: function(toEmail, username) {
     //     return {
     //         from: process.env.FROM_EMAIL,
-    //         to: process.env.TO_EMAIL,
+    //         to: toEmail,
     //         subject: `URGENT! ${username}, somebody is in need of an item you offered to the community. Please deliver ${Request.title} to the community station.`,
     //         text: 'Your item has been claimed by a community member in need!',
     //         html: ``
