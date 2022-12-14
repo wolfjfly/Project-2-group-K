@@ -12,7 +12,7 @@ When I revisit the site at a later time and choose to sign in then I am prompted
 When I am signed in to the site then I see navigation links to fulfill requests, make a request, and the option to log out.  
 When I click on the fulfill requests option in the navigation then I am presented with existing requests that include the request title, description and the date needed (if applicable).  
 When I click on view request then I am presented with the title, description and date an individual request is needed by.   
-When I click fulfill request then an email is sent confirming commitment to donate and any further instructions.   
+When I click fulfill request then I am sent back to the fulfill requests page, the item I confirmed to fulfill is no longer there and an email is sent confirming my commitment to donate and any further instructions.   
 When my request is fulfilled then an email is sent to me advising my request is being fulfilled and any further instructions.  
 When I click on the make a request link then I am presented with a form to input the title of what I am in need of, a brief description and the date the item is needed by.   
 When I click complete request then the newly created request is added to the fulfill requests page.   
