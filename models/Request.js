@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Request extends Model {}
+class Request extends Model { }
 
 Request.init(
   {
@@ -24,10 +24,10 @@ Request.init(
       defaultValue: DataTypes.NOW,
     },
     date_needed: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true,
     },
-    fulfilled: {
+    full_filled: {
       type: DataTypes.BOOLEAN,
     },
     receiver_id: {
@@ -35,16 +35,16 @@ Request.init(
       references: {
         model: 'user',
         key: 'id',
+        },
       },
-    }, 
     giver_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'user',
+          key: 'id',
+        },
       },
     },
-  },
   {
     sequelize,
     timestamps: false,

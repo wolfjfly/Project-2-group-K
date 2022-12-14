@@ -15,7 +15,7 @@ const seedDatabase = async () => {
     for (const request of requestData) {
         await Request.create({
             ...request,
-            user_id: users[Math.floor(Math.random() * users.length)].isSoftDeleted,
+            user_id: users[Math.floor(Math.random() * users.length)].id,
         });
     }
 
@@ -23,3 +23,4 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
+

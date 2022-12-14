@@ -30,7 +30,7 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-router.get("/request/:id", async (req, res) => {
+router.get("/request/:id", withAuth, async (req, res) => {
   try {
     const requestData = await Request.findByPk(req.params.id, {
       include: [
@@ -72,7 +72,7 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
-router.get("/requests/makeReq", async (req, res) => {
+router.get("/requests/makeReq", withAuth, async (req, res) => {
   try {
     res.render("makeReq")
   } catch(err) {

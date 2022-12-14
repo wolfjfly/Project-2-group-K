@@ -7,22 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seeds": "node seeds/seed.js",
-    "open": "heroku open"
+    "nodemon": "nodemon server.js",
+    "open": "heroku open",
+    "her-log": "heroku logs --tail"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wolfjfly/Project-2-group-K.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wolfjfly/Project-2-group-K/issues"
-  },
-  "homepage": "https://github.com/wolfjfly/Project-2-group-K#readme",
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
     "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

@@ -1,4 +1,6 @@
-// Date picker function
+
+
+//Date picker function
 $(function() {
     $("#datepicker").datepicker();
 });
@@ -30,3 +32,4 @@ $(function() {
         alert("Failed to add Request");
       }
     });
+

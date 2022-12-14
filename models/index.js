@@ -1,7 +1,6 @@
 const User = require('./User');
 const Request = require('./Request');
 
-
 User.hasMany(Request, {
   foreignKey: 'receiver_id',
   onDelete: 'CASCADE'
