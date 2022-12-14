@@ -18,7 +18,7 @@ router.post('/makeReq', withAuth, async (req, res) => {
 });
 
 // update request as claimed
-router.put('/:requestId', async (req, res) => {
+router.put('/:requestId', withAuth, async (req, res) => {
   try {
     const requestData = await Request.update({
       giver_id: req.session.user_id,
