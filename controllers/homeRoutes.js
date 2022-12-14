@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const { Request, User } = require("../models");
 const withAuth = require("../utils/auth");
-const sendEmail = require('../utils/newRegSendGrid');
 
 router.get("/", withAuth, async (req, res) => {
   try {

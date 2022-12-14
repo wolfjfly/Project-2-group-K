@@ -27,7 +27,7 @@ Request.init(
       type: DataTypes.DATE,
       allowNull: true,
     },
-    full_filled: {
+    fulfilled: {
       type: DataTypes.BOOLEAN,
     },
     receiver_id: {

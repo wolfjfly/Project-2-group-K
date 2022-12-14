@@ -21,7 +21,7 @@ router.put('/:requestId', async (req, res) => {
   try {
     const requestData = await Request.update({
       giver_id: req.session.user_id,
-      full_filled: true
+      fulfilled: true
     }, {
       where: {
         id: req.params.requestId,
@@ -33,6 +33,8 @@ router.put('/:requestId', async (req, res) => {
       return;
     }
     res.status(200).json(requestData);
+    // foundEmail()
+
   } catch (err) {
     res.status(500).json(err);
   }
