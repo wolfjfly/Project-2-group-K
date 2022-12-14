@@ -1,12 +1,17 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const sendEmail = require('../../utils/newRegSendGrid');
+const {foundEmail} = require('../../utils/newRegSendGrid');
 
 router.post('/', async (req,res) => {
     try {
-        const userData = await User.create(req.body);
+        console.log(req.body)
+        const userData = await User.create({
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password
+        });
 
-        sendEmail(userData.email, userData.name)
+        foundEmail(userData.email, userData.name)
 
         req.session.save(() => {
             req.session.user_id = userData.id; 

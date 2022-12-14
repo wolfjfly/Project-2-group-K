@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Request } = require('../../models');
 const withAuth = require('../../utils/auth');
 const session = require("express-session");
-const foundEmail = require('../../utils/foundDonationSendGrid');
+const {claimRequest} = require('../../utils/foundDonationSendGrid');
 
 
 router.post('/makeReq', withAuth, async (req, res) => {
@@ -38,6 +38,7 @@ console.log("claim the Request",requestData)
       res.status(404).json({ message: 'No request with this id!' });
       return;
     }
+    claimRequest(1, "tweetybird42", "Help I need somebody! Help, not just anybody!", "a nice bicycle")
     res.status(200).json(requestData);
   } catch (err) {
     res.status(500).json(err);
