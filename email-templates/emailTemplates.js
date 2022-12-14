@@ -2,8 +2,8 @@ require('dotenv').config({
     path: require('find-config')('.env')
 });
 
-const emailTemplates = {
-    newRegistration: function(toEmail, username) {
+
+    function newRegistration(toEmail, username) {
         return {
             from: process.env.FROM_EMAIL,
             to: process.env.TO_EMAIL,
@@ -17,21 +17,22 @@ const emailTemplates = {
             <br>
             <strong>Your fellow villagers 👨‍👩‍👧‍👦🏕️</strong>`
         }
-    },
+    }
 
-    foundDonation: function(toEmail, username) {
+    function foundDonation(toEmail, username, title, description) {
+        console.log(toEmail, username, title, description)
         return {
             from: process.env.FROM_EMAIL,
-            to:toEmail,
-            subject: `Good News, ${username} - someone in the village has ${Request.title} for you!`,
-            text: `Directions to claim ${Request.title}`,
+            to:process.env.TO_EMAIL,
+            subject: `Good News, ${username} - someone in the village has ${title} for you!`,
+            text: `Directions to claim ${title}`,
             html: `<h1>Please be patient!</h1>
             <br>
-            <p>Give us 24 hours from the time of this notification to process your request. After that you can stop at the Community Center on 123 Drury Lane NW, Cape Coral, FL 33914 to pick up ${user.item}</p>
+            <p>Give us 24 hours from the time of this notification to process your request. After that you can stop at the Community Center on 123 Drury Lane NW, Cape Coral, FL 33914 to pick up ${description}</p>
             <br>
             <h3>Remember, It Takes a Village😉</h3>`
         }
-    },
+    
 
     // future development
     // itemClaimed: function(toEmail, username) {
@@ -46,4 +47,4 @@ const emailTemplates = {
 
 };
 
-module.exports = emailTemplates;
+module.exports = { foundDonation, newRegistration }

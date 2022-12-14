@@ -4,7 +4,7 @@ $("#claim-request").click(async function(event){
    event.preventDefault()
 
    const reqId= $(this).attr("data-fulfillId");
-   // const full_filled= true 
+   // const fulfilled= true 
    // post 1 request endpoint needed here
    const response = await fetch(`/api/requests/${reqId}`, {
       method: "PUT",
