@@ -6,7 +6,7 @@ $("#button").click(async function(event){
 
     if (name && email && password) {
       // Send a POST request to the API endpoint
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/users/singUp', {
         method: 'POST',
         body: JSON.stringify({ name, email, password }),
         headers: { 'Content-Type': 'application/json' },
